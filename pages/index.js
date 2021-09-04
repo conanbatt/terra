@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from './index.module.css'
 import Link from 'next/link'
-import classnames from 'classnames'
 
-import { Card } from './components/card'
+import { Card } from '../src/components/card'
+import { Layout } from '../src/components/layout'
 
-import { TerraContext, withStore } from './store'
+import { TerraContext, withStore } from '../src/store'
 
 const fetcher = ({ url, key, dispatch }) => fetch(url)
   .then(res => res.json())
@@ -21,20 +21,12 @@ function Home() {
     fetcher({ dispatch, url: '/api/lots', key: 'lots' })
   }, [])
 
-  console.log('state', state)
   return (
-    <div className={styles.container}>
-      <Sidebar />
-      <Content>
-        <div>
-          { state.homes.length }
-          
-          <div className={styles.card_container}>
-            { state.homes.map(home => (<Card home={home} />))}
-          </div>
-        </div>
-      </Content>
-    </div>
+    <Layout>
+      <div className={styles.card_container}>
+        { state.homes.map(home => (<Card key={home.homePlanId} home={home} />))}
+      </div>
+    </Layout>
   )
 }
 
