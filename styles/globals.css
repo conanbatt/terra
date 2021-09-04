@@ -11,6 +11,18 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #FF7161;
+}
+
 * {
   box-sizing: border-box;
+}
+
+h3 {
+  margin: 0;
+}
+
+.small_text {
+  font-size: 14px;
 }

@@ -1,4 +1,9 @@
 import React from 'react'
+import styles from './index.module.css'
+import Link from 'next/link'
+import classnames from 'classnames'
+
+import { Card } from './components/card'
 
 import { TerraContext, withStore } from './store'
 
@@ -16,17 +21,42 @@ function Home() {
     fetcher({ dispatch, url: '/api/lots', key: 'lots' })
   }, [])
 
-
+  console.log('state', state)
   return (
-    <div>
-      <div>
-        Nothing?
-        { state.homes.length }
-        {/* JSON.stringify(state) */}
-      </div>
+    <div className={styles.container}>
+      <Sidebar />
+      <Content>
+        <div>
+          { state.homes.length }
+          
+          <div className={styles.card_container}>
+            { state.homes.map(home => (<Card home={home} />))}
+          </div>
+        </div>
+      </Content>
     </div>
   )
 }
+
+const Sidebar = () => (
+  <div className={styles.sidebar}>
+    <ul>
+      <li>
+        <Link href="/">
+          <a>Home Plans</a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/">
+          <a>Lots</a>
+        </Link>
+      </li>
+    </ul>
+  </div>
+)
+
+const Content = ({ children }) => <div className={styles.content}>{children}</div>
+
 
 export default withStore(Home)
 
