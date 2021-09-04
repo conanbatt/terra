@@ -9,7 +9,7 @@ const INITIAL_STATE = {
 function reducer(state, action) {
   switch(action.type) {
     case 'LOAD':
-    return { ...state, ...action.payload }
+    return { ...state, [action.key]: action.payload }
   }
 }
 

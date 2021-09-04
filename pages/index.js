@@ -9,7 +9,7 @@ import { TerraContext, withStore } from '../src/store'
 
 const fetcher = ({ url, key, dispatch }) => fetch(url)
   .then(res => res.json())
-  .then((response) => dispatch({ type: 'LOAD', payload: { [key]: response } }))
+  .then((response) => dispatch({ type: 'LOAD', key, payload: response }))
 
 
 function Home() {
@@ -29,26 +29,6 @@ function Home() {
     </Layout>
   )
 }
-
-const Sidebar = () => (
-  <div className={styles.sidebar}>
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home Plans</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/">
-          <a>Lots</a>
-        </Link>
-      </li>
-    </ul>
-  </div>
-)
-
-const Content = ({ children }) => <div className={styles.content}>{children}</div>
-
 
 export default withStore(Home)
 
