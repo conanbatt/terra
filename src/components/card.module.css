@@ -1,0 +1,27 @@
+.card {
+  border-radius: 6px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 180px;
+  margin-bottom: 32px;
+  position: relative;
+  height: 262px;
+}
+
+.card:hover {
+  box-shadow: 0 1px 3px 3px rgb(0 0 0 / 10%);
+  cursor: pointer;
+}
+
+.card_image {
+  width: 100%;
+  height: 75px;
+  object-fit: cover;
+  border-bottom: 1px solid #000;
+}
+
+.card_content {
+  padding: 11px 13px;
+}
+

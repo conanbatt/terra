@@ -1,0 +1,17 @@
+.like {
+  background:white;
+  border: 1px solid #999;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.liked {
+  color: red;
+  border-color: red;
+}
