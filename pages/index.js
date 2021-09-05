@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './index.module.css'
-import Link from 'next/link'
 
 import { Card } from '../src/components/card'
+import { HomeCard } from '../src/components/homeCard'
 import { Layout } from '../src/components/layout'
 
 import { TerraContext, withStore } from '../src/store'
@@ -24,7 +24,7 @@ function Home() {
   return (
     <Layout>
       <div className={styles.card_container}>
-        { state.homes.map(home => (<Card key={home.homePlanId} home={home} />))}
+        { state.homes.map(home => (<HomeCard key={home.homePlanId} home={home} />))}
       </div>
     </Layout>
   )

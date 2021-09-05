@@ -26,3 +26,24 @@ h3 {
 .small_text {
   font-size: 14px;
 }
+
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0, 0.6);
+}
+
+.dialog {
+  width: 650px;
+  background: white;
+  min-height: 350px;
+  border-radius: 6px;
+  padding: 20px;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 200px;
+}

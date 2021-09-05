@@ -4,12 +4,18 @@ const INITIAL_STATE = {
   homes: [],
   lots: [],
   combinations: [],
+  modals: {}
 }
 
 function reducer(state, action) {
+  console.log('actions', state, action)
   switch(action.type) {
     case 'LOAD':
-    return { ...state, [action.key]: action.payload }
+      return { ...state, [action.key]: action.payload }
+    case 'SHOW_MODAL':
+      return { ...state, modals: { [action.key]: action.payload } }
+    case 'HIDE_MODAL':
+      return { ...state, modals: {}}
   }
 }
 
