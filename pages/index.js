@@ -1,8 +1,7 @@
 import React from 'react'
 import styles from './index.module.css'
 
-import { Card } from '../src/components/card'
-import { HomeCard } from '../src/components/homeCard'
+import { HomeCard } from '../src/components/home/homeCard'
 import { Layout } from '../src/components/layout'
 
 import { TerraContext, withStore } from '../src/store'

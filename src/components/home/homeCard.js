@@ -1,7 +1,7 @@
 import React from 'react'
-import { Card } from './card'
-import { TerraContext } from '../store';
-import { Modal } from './modal'
+import { Card } from '../card'
+import { TerraContext } from '../../store';
+import { Modal } from '../modal'
 import { HomeDescription } from './homeDescription'
 
 const modalKey = home => `home-card-${home.homePlanId}`
