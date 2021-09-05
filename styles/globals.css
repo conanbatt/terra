@@ -41,7 +41,7 @@ h3 {
   background: white;
   min-height: 350px;
   border-radius: 6px;
-  padding: 20px;
+  overflow: hidden;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);

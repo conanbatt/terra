@@ -5,7 +5,7 @@ import classnames from 'classnames'
 export const HomeDescription = ({ home }) => {
   return (
     <>
-      <h3 className={styles.title}>
+      <h3>
         {home.name}
       </h3>
       <div className={classnames(styles.subtitle, 'small_text')}>
