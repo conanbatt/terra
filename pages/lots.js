@@ -16,7 +16,7 @@ function Home() {
   return (
     <Layout>
       <div className="card_container">
-        { state.homes.map(home => (<HomeCard key={home.homePlanId} home={home} />))}
+        { state.lots.map(lot => (<HomeCard key={home.homePlanId} home={home} />))}
       </div>
     </Layout>
   )
