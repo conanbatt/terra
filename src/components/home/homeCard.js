@@ -16,7 +16,7 @@ export const HomeCard = ({ home }) => {
         content={<HomeDescription home={home} />}
         image={home.image}
         onClick={() => {
-          // This can be chained by executing push and listening to route changes, or imperatively this way.
+          // TODO: add note or refactor?
           router.push(`/?selectedHomePlan=${home.homePlanId}`)
           dispatch({ type: 'SHOW_MODAL', key: MODAL_KEY, payload: home })
         }}
