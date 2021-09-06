@@ -32,28 +32,9 @@ export function useModalLoader() {
           return dispatch({ type: 'SHOW_MODAL', key, payload: resolver({ ...state, value }) })
         }
       })
-    }
-  }, [isReady, homes, lots])
-
-  /*
-  React.useEffect(() => {
-    if (isReady && router.query.selectedHomePlan) {
-      const home = state.homes.find(({ homePlanId }) => homePlanId === Number(router.query.selectedHomePlan))
-      if (home) {
-        dispatch({ type: 'SHOW_MODAL', key: MODAL_KEY, payload: home })
-      } else {
-        console.error('The home is not available')
+      if (Object.keys(state.modals).length > 0) {
+        dispatch({ type: 'HIDE_MODAL' })
       }
     }
-  }, [isReady, homes])
-
-*/
-  React.useEffect(() => {
-    const onRouteChange = what => console.log('what', what)
-    router.events.on('routeChangeStart', onRouteChange)
-  }, [])
+  }, [isReady, homes, lots, router.query])
 }
-
-/*
-  Not using dispatch payload at all?
-*/

@@ -16,9 +16,7 @@ export const HomeCard = ({ home }) => {
         content={<HomeDescription home={home} />}
         image={home.image}
         onClick={() => {
-          // TODO: add note or refactor?
-          router.push(`/?selectedHomePlan=${home.homePlanId}`)
-          dispatch({ type: 'SHOW_MODAL', key: MODAL_KEY, payload: home })
+          router.push(`/homes?selectedHomePlan=${home.homePlanId}`)
         }}
       />
     </>

@@ -16,9 +16,7 @@ export const LotCard = ({ lot }) => {
         content={<LotDescription lot={lot} />}
         image={lot.image}
         onClick={() => {
-          // TODO: add note or refactor?
           router.push(`/lots?selectedLot=${lot.lotId}`)
-          dispatch({ type: 'SHOW_MODAL', key: MODAL_KEY, payload: lot })
         }}
       />
     </>
