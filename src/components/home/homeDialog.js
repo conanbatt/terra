@@ -4,6 +4,7 @@ import { Modal } from '../modal'
 import { TerraContext } from '../../store';
 import { HomeDescription } from './homeDescription';
 import { findCompatibleLots } from '../utils/combinationResolver'
+import classNames from 'classnames';
 
 export const MODAL_KEY = 'HOME_MODAL'
 
@@ -25,8 +26,8 @@ export const HomeDialog = ({ home }) => {
         <h3 className={styles.header}>
           Compatible Lots
         </h3>
-        <div className={styles.card_container}>
-          {lots.map(lot => <div key={lot.lotId}>Lot Id: {lot.lotId}</div>)}
+        <div className={classNames("card_container", styles.card_wrapper)}>
+          {lots.slice(0, 3).map(lot => <div key={lot.lotId}>Lot Id: {lot.lotId}</div>)}
         </div>
       </div>
     </Modal>

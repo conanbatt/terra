@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Link from 'next/link'
+import { HomeCard } from '../src/components/home/homeCard'
 import { Layout } from '../src/components/layout'
 
 import { TerraContext, withStore } from '../src/store'
@@ -15,12 +15,9 @@ function Home() {
 
   return (
     <Layout>
-      <h1>
-        Welcome to Terra!
-      </h1>
-      <p>
-        A rough sketch of Tinder for <Link href="/lots"><a style={{ textDecoration: 'underline '}}>Lots</a></Link> and <Link href="/homes"><a style={{ textDecoration: 'underline '}}>Homes</a></Link>.
-      </p>
+      <div className="card_container">
+        { state.homes.map(home => (<HomeCard key={home.homePlanId} home={home} />))}
+      </div>
     </Layout>
   )
 }

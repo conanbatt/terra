@@ -9,6 +9,8 @@
 
 .dialog_content {
   display: flex;
+  margin-bottom: 30px;
+  padding-right: 40px;
 }
 
 .description_container {
@@ -20,6 +22,8 @@
 
 .image_container {
   width: 50%;
+  border-radius: 0 0 6px 0;
+  overflow: hidden;
 }
 
 .card_wrapper {

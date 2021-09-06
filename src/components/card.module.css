@@ -3,7 +3,7 @@
   border: 1px solid #000;
   box-sizing: border-box;
   overflow: hidden;
-  width: 375px;
+  width: 180px;
   margin-bottom: 32px;
 }
 
@@ -14,7 +14,7 @@
 
 .card_image {
   width: 100%;
-  height: 180px;
+  height: 75px;
   object-fit: cover;
   border-bottom: 1px solid #000;
 }
@@ -28,3 +28,4 @@
 .card_content {
   padding: 11px 13px;
 }
+

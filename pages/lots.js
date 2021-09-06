@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { HomeCard } from '../src/components/home/homeCard'
+import { LotCard } from '../src/components/lot/lotCard'
 import { Layout } from '../src/components/layout'
 
 import { TerraContext, withStore } from '../src/store'
@@ -13,10 +13,12 @@ function Home() {
   useDataLoader()
   useModalLoader()
 
+  console.log('lots', state.lots)
+
   return (
     <Layout>
       <div className="card_container">
-        { state.lots.map(lot => (<HomeCard key={home.homePlanId} home={home} />))}
+        { state.lots.map(lot => (<LotCard key={lot.lotId} lot={lot} />))}
       </div>
     </Layout>
   )
