@@ -4,7 +4,8 @@ import Link from 'next/link'
 
 import { HomeDialog, MODAL_KEY } from './home/homeDialog'
 import { LotDialog, MODAL_KEY as LOT_MODAL_KEY } from './lot/lotDialog'
-import { TerraContext } from '../store';
+import { TerraContext } from '../store'
+import { Search } from '../components/search'
 
 export function Layout({ children }) {
   const { state } = React.useContext(TerraContext)
@@ -12,7 +13,13 @@ export function Layout({ children }) {
   return (
     <div className={styles.container}>
       <Sidebar />
-      <div className={styles.content}>{children}</div>
+      
+      <div className={styles.content}>
+        <div>
+          <Search />
+        </div>
+        {children}
+      </div>
       { /* This is a crude dispatch for modals.
          * In this design we separate the modal from the content entirely, meaning we support the modals in any page!
          */

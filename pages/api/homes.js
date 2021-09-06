@@ -1,4 +1,4 @@
-const HOMES = [{
+export const HOMES = [{
   homePlanId: 1,
   name: "The Medita",
   numBeds: 4,

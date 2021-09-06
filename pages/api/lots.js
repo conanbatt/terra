@@ -1,4 +1,4 @@
-const LOTS = [
+export const LOTS = [
 	{
 		lotId: 1,
 		address: "123 Example Ln, Charlotte, NC",
