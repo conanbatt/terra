@@ -4,6 +4,7 @@ const INITIAL_STATE = {
   homes: [],
   lots: [],
   combinations: [],
+  likes: {},
   modals: {}
 }
 
@@ -16,7 +17,18 @@ function reducer(state, action) {
       return { ...state, modals: { [action.key]: action.payload } }
     case 'HIDE_MODAL':
       return { ...state, modals: {}}
+    case 'ADD_LIKE': {
+      return { ...state, likes: { ...state.likes, [action.key]: action.payload }}
+    }
+    case 'REMOVE_LIKE': {
+      if (state.likes[action.key]) {
+        const newState = { ...state }
+        delete newState.likes[action.key]
+        return newState
+      }
+    }
   }
+  return state
 }
 
 export const TerraContext = React.createContext()

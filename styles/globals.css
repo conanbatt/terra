@@ -52,4 +52,14 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: space-around;
+}
+
+.button {
+  all: unset;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-bottom: 40px;
 }

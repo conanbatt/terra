@@ -9,16 +9,25 @@ import { useDataLoader } from '../src/components/hooks/useDataLoader'
 
 function Home() {
   const { state } = React.useContext(TerraContext)
+  const [showLiked, setShowLiked] = React.useState(false)
 
   useDataLoader()
   useModalLoader()
 
-  console.log('lots', state.lots)
-
   return (
     <Layout>
+      <button className="button" onClick={() => setShowLiked(!showLiked)}>Show Saved Lots</button>
       <div className="card_container">
-        { state.lots.map(lot => (<LotCard key={lot.lotId} lot={lot} />))}
+        {
+          showLiked ? (
+            Object
+              .values(state.likes)
+              .filter(({ lotId }) => !!lotId)
+              .map(lot => (<LotCard key={lot.lotId} lot={lot} />))
+          ) : (
+            state.lots.map(lot => (<LotCard key={lot.lotId} lot={lot} />))
+          )
+        }
       </div>
     </Layout>
   )
