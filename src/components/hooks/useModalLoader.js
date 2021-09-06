@@ -24,6 +24,7 @@ export function useModalLoader() {
   const { homes, lots } = state
   const { isReady } = router
 
+  // This effect will hook on first load and also on changes on the query.
   React.useEffect(() => {
     if (isReady) {
       QUERY_RESOLVER.forEach(({ key, query, resolver }) => {

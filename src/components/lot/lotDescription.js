@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './lotDescription.module.css'
+import styles from '../shared/description.module.css'
 import classnames from 'classnames'
 
 export const LotDescription = ({ lot }) => {

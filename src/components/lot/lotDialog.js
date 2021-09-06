@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './lotDialog.module.css'
+import styles from '../shared/dialog.module.css'
 import { Modal } from '../modal'
 import { TerraContext } from '../../store'
 import { LotDescription } from './lotDescription'
